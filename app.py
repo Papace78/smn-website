@@ -28,7 +28,7 @@ painting = st.file_uploader(
 
 
 if painting is not None:
-    r = requests.post(url = 'http://localhost:8000/predict?', files = {'file':painting})
+    r = requests.post(url = 'https://smndocker-rdwmjilicq-ew.a.run.app/predict?', files = {'file':painting})
     response = r.json()
     my_pred = response['mypred'][1].upper()
 
