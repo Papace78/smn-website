@@ -11,12 +11,16 @@ st.set_page_config(
 )
 
 with st.sidebar:
-    st.title("'Say my name'")
+    st.title("'Hallo.'")
     st.image('smn.png')
 
 st.markdown("<h1 style='text-align: center; color: Crimson;'>SMN</h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center; color: IndianRed;'>Painting's movement classifier</h5>", unsafe_allow_html=True)
 
+painting = st.camera_input(
+    label = "Take a picture or upload a saved painting",
+    help = ':middle_finger:'
+)
 
 painting = st.file_uploader(
     label = ':lower_left_paintbrush: :lower_left_paintbrush: :lower_left_paintbrush: :lower_left_paintbrush: :lower_left_paintbrush:\
@@ -25,7 +29,6 @@ painting = st.file_uploader(
     accept_multiple_files = False,
     help = ':middle_finger:',
 )
-
 
 if painting is not None:
     r = requests.post(url = 'https://smndocker-rdwmjilicq-ew.a.run.app/predict?', files = {'file':painting})
