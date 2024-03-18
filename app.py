@@ -58,13 +58,4 @@ if painting is not None:
 
     st.write(f"Paiting's movement : **{my_pred}**")
 
-    image = Image.open(painting)
-    img_array = np.array(image)
     st.balloons()
-
-    if image is not None:
-        st.image(
-            image,
-            caption=f"You amazing image has shape {img_array.shape[0:2]}",
-            use_column_width=True,
-        )
